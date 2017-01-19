@@ -1,0 +1,370 @@
+/* =================================================================================== 
+======================================================================================
+
+
+								Body
+
+
+======================================================================================
+===================================================================================== */
+@font-face {
+	font-family: 'Helvetica';
+	src: url('Helvetica Inserat LT.ttf');
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+.clearfix {clear: both; content: '';}
+img {max-width: 100%; border: 0;}
+
+
+body {position: relative;}
+
+.body_container {
+	position: relative;
+	max-width: 1280px;
+	min-width: 800px;
+	display: block;
+	padding: 0;
+	margin: 0 auto;
+	color: #ffffff;
+	font-family: 'Tahoma';
+	font-size: 12px;
+	line-height: 18px;
+}
+
+
+/*logo element must be fixed at all time at the left border of the page*/
+/*I'm not sure whether you mean page as a container or the browser window.
+If the logo is fixed it would always be on the left border of the 
+browser window and will scroll down with the page. This is how I
+understand the task, so it should be position: fixed.
+If by 'border of the page' you mean the content that has max-width 1280px,
+the logo should have position: absolute.*/
+
+.logo_div {
+	/*position: absolute;*/
+	position: fixed;
+	width: 31px;
+	height: 109px;
+	top: 86px;
+	left: 0; 
+}
+
+.logo_div img {width: 100%;}
+
+.body_90_container {
+	width: 90%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+
+/* =================================================================================== 
+======================================================================================
+
+
+								HEADER
+
+
+======================================================================================
+===================================================================================== */
+
+header {
+	position: relative;
+	width: 100%;
+	background-color: #cccccc;
+	padding: 72px 0 0 0;
+	margin: 10px 0;
+}
+
+.nav_ul {
+	margin: 0 0 0 10px;
+	padding: 0;
+	list-style: none;
+	display: inline-block;
+}
+
+.nav_ul li, .drop_games {display: inline-block;}
+
+.nav_ul li a, .drop_games a {
+	color: #ffffff;
+	background-color: #666666;
+	text-decoration: none;
+	padding: 6px 0;
+	display: inline-block;
+	width: 102px;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+}
+
+.nav_ul li a:hover, .drop_games a:hover {background-color: #000000;}
+
+#drop_content_games {
+	display:none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 150px;
+	background-color: #000000;
+	z-index: 1;
+}
+
+#drop_content_games li {
+	width: 142px;
+	margin: 0 4px;
+	text-align: center;
+}
+
+#drop_content_games li a {
+	background-color: #000000;
+	width: auto;
+}
+
+#drop_content_games li:not(:last-child) {border-bottom: 1px solid #808080;}
+
+#drop_content_games li a:hover {color: #910001;}
+
+#drop_btn_games {position: relative;}
+
+#drop_btn_games::after {
+	content: "\25BC";
+	font-size: 8px;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin-top: -4px;
+	line-height: 10px;
+}
+
+/* =================================================================================== 
+								Flags
+===================================================================================== */
+#flags_container {
+	float: right;
+	margin: 9px 4px 0 0;
+}
+
+.flag {
+    display: inline-block;
+    width: 25px;
+    height: 15px;
+    background: url('flags.png') no-repeat;
+    padding: 0;
+    margin: 0 4px 0 0;
+    opacity: 0.3;
+}
+
+.flag:hover {opacity: 1;}
+
+.active_flag {opacity: 1;}
+
+.flag.flag-gb {background-position: 0 -15px;}
+
+.flag.flag-de {background-position: 0 0;}
+
+.flag.flag-fr {background-position: -25px 0;}
+
+/* =================================================================================== 
+								MAIN CONTENT
+===================================================================================== */
+
+.main_content {
+	position: relative;
+	width: 100%;
+	display: flex;
+}
+
+/* =================================================================================== 
+======================================================================================
+
+
+								LEFT COLUMN
+
+
+======================================================================================
+===================================================================================== */
+
+.left_column {
+	position: relative;
+	background-color: #cccccc;
+	padding: 10px;
+	width: 70%;
+}
+
+.left_column_content {
+	position: relative;
+	background-color: #515151;
+	padding: 0;
+	margin: 0;
+}
+
+.left_column h1 {
+	padding: 28px 0 20px 28px;
+	margin: 0 10px;
+	font-family: 'Helvetica';
+	border-bottom: 1px solid #cccccc;
+	-webkit-font-smoothing: antialiased;
+}
+
+.main_article_p {
+	padding: 10px 28px;
+	margin: 0;
+}
+
+.additional_info {
+	margin: 0 20px;
+}
+
+/* =================================================================================== 
+======================================================================================
+
+
+								TABLE
+
+
+======================================================================================
+===================================================================================== */
+.table_container {
+	position: relative;
+	width: calc(100% - 40px);
+	margin: 0 20px;
+	padding-bottom: 20px;
+}
+
+.tableDiv {
+	position: relative; 
+	width: 100%;
+	background-color: #282828;
+}
+
+table {width: 100%;}
+
+th, td {
+	border:1px solid #000000;
+	text-align: center;
+	vertical-align: middle;
+	text-transform: uppercase;
+}
+
+td {text-transform: capitalize;}
+
+tr:nth-child(odd) {
+	background-color: #282828;
+	color: #ffffff;
+}
+
+tr:nth-child(even) {
+	background-color: #cccccc;
+	color: #000000;
+}
+
+
+/* =================================================================================== 
+======================================================================================
+
+
+								RIGHT COLUMN
+
+
+======================================================================================
+===================================================================================== */
+
+.right_column {
+	position: relative;
+	width: 30%;
+	background-color: #a3a3a3;
+	padding: 10px;
+}
+
+.right_column_content {
+	position: relative;
+	background-color: #515151;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.info_container {margin-bottom: 2px;}
+
+.open_btn {
+	display: block;
+	background-color: #000000;
+	padding: 10px 0 10px 10px;
+	position: relative;
+}
+
+.open_btn:after {
+	content: "\25BC";
+	font-size: 10px;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin-top: -5px;
+	line-height: 10px;
+}
+
+.open_btn.active_open {display: none;}
+
+.info_block {
+	background-color: #000000;
+	padding: 10px;
+	display: none;
+}
+
+.info_block.show_info {display: block;}
+
+.text_span {
+	display: block;
+	margin: 0;
+	padding: 26px 0;
+}
+
+.close_span {
+	display: block;
+	position: relative;
+}
+
+.close_span:after {
+	content: "\25B6";
+	font-size: 16px;
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	right: 0;
+}
+
+
+
+/* =================================================================================== 
+======================================================================================
+
+
+								FOOTER
+
+
+======================================================================================
+===================================================================================== */
+
+footer {
+	background-color: #cccccc;
+	color: #515151;
+	margin: 10px 0 0 0;
+	padding: 0;
+}
+
+.footer_text {padding: 10px;}
+
+.footer_left {display: inline-block;}
+
+.footer_right {float: right;}
+
+.footer_list {list-style: none;}
+
+.footer_list li {display: inline-block;}
+
+.footer_list li a {color: #515151;}
